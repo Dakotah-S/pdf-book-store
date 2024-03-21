@@ -1,0 +1,8 @@
+.fw-bolder{
+    font-weight:bolder !important;
+}
+
+.display-4{
+    font-size:calc(1.475rem + 2.7vw);
+    line-height: 1.2;
+}
