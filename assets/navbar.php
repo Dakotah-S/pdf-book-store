@@ -29,7 +29,7 @@
         </div>
         <!-- Shopping Cart -->
         <div class="navbar-text ms-auto">
-            <a href="#" class="btn btn-outline-dark"><i class="fas fa-shopping-cart me-2"></i> Shopping Cart</a>
+            <a href="./assets/cart.php" class="btn btn-outline-dark"><i class="fas fa-shopping-cart me-2"></i> Shopping Cart</a>
         </div>
     </div>
 </nav>
