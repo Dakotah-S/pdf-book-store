@@ -11,11 +11,44 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="./assets/css/style.css" rel="stylesheet" />
 </head>
-
-    <body>
+<body>
         
+                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.php">Bookstore</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pricing</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown link
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Shopping Cart -->
+                    <div class="navbar-text ms-auto">
+                        <a href="./assets/cart.php" class="btn btn-outline-dark"><i class="fas fa-shopping-cart me-2"></i> Shopping Cart</a>
+                    </div>
+                </div>
+            </nav>
 
-        <?php include"./assets/navbar.php" ?>
         <?php include"./assets/hero.php" ?>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -36,7 +69,8 @@
                     </div>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
-                            <a href="./assets/cart.php?action=add&id=<?php echo $book['id']; ?>" class="btn btn-outline-dark">Add To Cart</a>
+                            <a href="./assets/cart.php?action=add&id=<?php echo $book['id']; ?>" class="btn btn-outline-dark">Add to cart</a>
+                            <a href="./views/product-page.php?id=<?php echo $book['id']; ?>" class="btn btn-outline-dark">View Details</a>
                         </div>
                     </div>
                 </div>

@@ -1,24 +1,41 @@
+
+<?php include"../assets/books.php"?>
 <?php include"../assets/header.php"?>
 
 <body>
 
 <?php include"../assets/navbar.php" ?>
 <?php include"../assets/hero.php" ?>
+<?php
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    foreach ($books as $book){
+        if ($book["id"] == $id){
+            $book_id = $book['id'];
+            $book_title = $book['title'];
+            $book_price = $book['price'];
+            $book_image = $book['image'];
+            $book_description = $book['description'];
+        }
+    }
+}
+?>
 
 <!-- Product Details -->
 <div class="container my-5">
   <div class="row">
     <div class="col-md-6">
-      <img src="https://via.placeholder.com/400" alt="Book Cover" class="img-fluid">
+      <img src="../assets/image/<?php echo $book_image;?>" alt="Book Cover" class="img-fluid">
     </div>
     <div class="col-md-6">
-      <h2 class="mb-4">Book Title</h2>
+      <h2 class="mb-4"><?php echo $book_title; ?></h2>
       <p><strong>Author:</strong> Author Name</p>
       <p><strong>Category:</strong> Nonfiction</p>
-      <p><strong>Price:</strong> $40.00</p>
+      <p><strong>Price:</strong> <?php echo $book_price; ?></p>
       <p><strong>Description:</strong></p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vestibulum condimentum eros vitae tortor maximus, sed vehicula eros pulvinar.</p>
-      <button class="btn btn-primary"><i class="fas fa-shopping-cart me-2"></i>Add to Cart</button>
+      <p><?php echo $book_description; ?></p>
+      <a href="../assets/cart.php?action=add&id=<?php echo $book_id; ?>" class="btn btn-primary">Add to cart</a>
+
     </div>
   </div>
 </div>
