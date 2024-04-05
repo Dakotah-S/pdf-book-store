@@ -29,7 +29,21 @@
         </div>
         <!-- Shopping Cart -->
         <div class="navbar-text ms-auto">
-            <a href="./assets/cart.php" class="btn btn-outline-dark"><i class="fas fa-shopping-cart me-2"></i> Shopping Cart</a>
+            <?php
+            $cartItemCount = 0;
+            if(isset($_SESSION['cart'])) {
+                foreach ($_SESSION['cart'] as $item) {
+                    $cartItemCount += $item['quantity'];
+                }
+            }
+            ?>
+            <a href="./assets/cart.php" class="btn btn-outline-dark">
+                <i class="fas fa-shopping-cart me-2"></i> Shopping Cart
+                <?php if ($cartItemCount > 0): ?>
+                    <span class="badge bg-danger"><?php echo $cartItemCount; ?></span>
+                <?php endif; ?>
+            </a>
         </div>
+
     </div>
 </nav>

@@ -49,15 +49,13 @@ $tax = 0.0825 * $subtotal; // Assuming tax rate is 10%
 $total = $subtotal + $tax;
 ?>
 
-<?php include"../assets/header.php"?>
+<?php include "../assets/header.php" ?>
 
 <body>
-
-<?php include"../assets/navbar.php" ?>
-<?php include"../assets/hero.php" ?>
-
-<div class="container">
-           <h1 class="mt-5 mb-4">Shopping Cart</h1>
+    <?php include "../assets/navbar.php" ?>
+    <?php include "../assets/hero.php" ?>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Shopping Cart</h1>
         <?php if(empty($_SESSION['cart'])): ?>
             <p>Your shopping cart is empty.</p>
         <?php else: ?>
@@ -88,8 +86,7 @@ $total = $subtotal + $tax;
                     <?php endforeach; ?>
                 </tbody>
             </table>
-        <?php endif; ?>
-        <div class="col-md-4">
+            <div class="col-md-4">
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Cart Summary</h5>
@@ -107,17 +104,33 @@ $total = $subtotal + $tax;
                                 <span>$<?php echo number_format($total, 2); ?></span>
                             </li>
                         </ul>
-                        <a href="../views/checkout.php" class="btn btn-primary mt-2">Proceed to Checkout</a>
+                        <a href="../views/checkout.php?subtotal=<?php echo $subtotal; ?>&tax=<?php echo $tax; ?>&total=<?php echo $total; ?>" class="btn btn-primary mt-2">Proceed to Checkout</a>
                     </div>
                 </div>
             </div>
+        <?php endif; ?>
     </div>
+
+
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Font Awesome Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     <?php include"../assets/footer.php"?>
+    
+        <!-- Add this script at the end of your HTML body -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Find the shopping cart element
+        var shoppingCart = document.querySelector(".navbar-text .btn");
+
+        // Hide the shopping cart element
+        if (shoppingCart) {
+            shoppingCart.style.display = "none";
+        }
+    });
+</script>
 
 </body>
 </html>
