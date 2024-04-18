@@ -1,10 +1,10 @@
 <style>
+
 .sidebar-content {
-  width: 200px;
-  background-color: #f5f5f5;
+  width: 200px; /* Adjust the width as needed */
+  background-color: white;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-content ul {
@@ -30,11 +30,12 @@
 </style>
 </head>
 <body>
+    <div class="ms-3">
 <!-- Button to toggle sidebar -->
 <a href="#" id="toggleSidebarBtn">Show Categories</a>
-
+    </div>
 <!-- Content -->
-<div class="sidebar-content">
+<div class="sidebar-content ms-3">
   <!-- Categories will be added here dynamically -->
 </div>
 

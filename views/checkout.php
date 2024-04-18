@@ -34,7 +34,7 @@ if(isset($_GET['total'])) {
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
                             </li>
-                            <li class="nav-item">
+                            <!--<li class="nav-item">
                                 <a class="nav-link" href="#">Features</a>
                             </li>
                             <li class="nav-item">
@@ -49,7 +49,7 @@ if(isset($_GET['total'])) {
                                     <li><a class="dropdown-item" href="#">Another action</a></li>
                                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                     <!-- Shopping Cart -->
